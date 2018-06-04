@@ -15,7 +15,13 @@ class hello_block extends BlockBase {
 /** Implement Drupal\Core\Block\BlockBase::build ()**/
 
 public function build(){
-	$build = array('markup' => $this->t('Welcome'));
+	$build = [
+  '#markup' => $this->t('Welcome %name. It is %time.',[
+  	'%name' => \Drupal::CurrentUser()->getAccountName(),
+  	'%time' => \Drupal::service('date.formatter')
+  	->format(\Drupal::service('datetime.time')->getCurrentTime(), 'custom', 'H:i s/s'),
+  ]),
+];
 
 	return $build;
   }
