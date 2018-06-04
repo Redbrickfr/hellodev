@@ -16,10 +16,11 @@ class hello_block extends BlockBase {
 
 public function build(){
 	$build = [
-  '#markup' => $this->t('Welcome %name. It is %time.',[
+  '#markup' => $this->t('Welcome %name %id. It is %time.',[
   	'%name' => \Drupal::CurrentUser()->getAccountName(),
+  	'%id' => \Drupal::CurrentUser()->getAccount()->id(),
   	'%time' => \Drupal::service('date.formatter')
-  	->format(\Drupal::service('datetime.time')->getCurrentTime(), 'custom', 'H:i s/s'),
+  	->format(\Drupal::service('datetime.time')->getCurrentTime(), 'custom', 'd F Y H:i'),
   ]),
 ];
 
