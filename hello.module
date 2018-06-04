@@ -1,0 +1,28 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Routing\formStateInterface;
+use Drupal\Core\Routing\EntityInterface;
+use Drupal\Core\Routing\NodeInterface;
+
+/**Implement hook hello_cron*/
+function hello_cron() {
+  drupal_set_message(t('Hello module cron task done.'),'warning');
+}
+
+/**Implement hook hello_help*/
+function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the block module.
+    case 'help.page.hello':
+      return '<p>' . t('I\'m  hello help.')
+     . '</p>';
+  }
+}
+
+/** Implement hook hello_user_login*/
+function hello_user_login($account) {
+	drupal_set_message(t('welcome dear %name',
+['%name' => $account->getAccountName()]
+));
+}

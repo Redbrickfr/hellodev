@@ -1,0 +1,19 @@
+# Nom du module
+name: hello
+
+# Description du module
+description: Ajoute une page Hello (module for D8 developer training).
+
+# Type de code (module, theme,...)
+type: module
+
+# Version de drupal pour laquelle est développée ce module
+core: 8.x
+
+# Version du module
+version: 8.x-1.0
+
+# Groupe du module
+package: training
+
+# Dépendance vers d'autres modules
