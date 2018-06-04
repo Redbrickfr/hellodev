@@ -1,0 +1,4 @@
+hello.hello:
+  route_name: hello.hello
+  base_name: hello.hello
+  title: 'Hi!'
