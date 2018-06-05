@@ -1,9 +1,10 @@
 <?php
 namespace Drupal\hello\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 
 /**
- * problockvide a hello
+ * provide block a hello
  *
  * @Block(
  * id = "hello_block",
@@ -20,8 +21,14 @@ public function build(){
   	'%name' => \Drupal::CurrentUser()->getAccountName(),
   	'%id' => \Drupal::CurrentUser()->getAccount()->id(),
   	'%time' => \Drupal::service('date.formatter')
-  	->format(\Drupal::service('datetime.time')->getCurrentTime(), 'custom', 'd F Y H:i'),
+  	->format(\Drupal::service('datetime.time')->getCurrentTime(), 'custom', 'd F Y H:i:s'),
   ]),
+
+  '#cache' => [
+	  'keys'    => ['hello:block'],
+	  'contexts'=> ['user'],
+	  'max-age' => '100',
+  ],
 ];
 
 	return $build;

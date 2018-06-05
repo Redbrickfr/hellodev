@@ -1,8 +1,15 @@
 hello.hello:
-  path: '/hello/{param}'
+  path: '/nodelist/page'
   defaults:
-    _title: 'Hello'
+    _title: 'Liste des pages'
     _controller: '\Drupal\hello\Controller\HelloController::content'
     param: 'no parameter'
+  requirements:
+    _access: 'TRUE'
+hello.hello2:
+  path: '/nodelist/{nodetype}'
+  defaults:
+    _title: 'Liste des articles'
+    _controller: '\Drupal\hello\Controller\HelloController2::content'
   requirements:
     _access: 'TRUE'

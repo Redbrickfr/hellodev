@@ -1,0 +1,10 @@
+hello.hello:
+  route_name: hello.hello
+  base_route: hello.hello
+  title: 'Liste des pages'
+  weight: 1
+hello.hello2:
+  route_name: hello.hello2
+  base_route: hello.hello
+  title: 'Liste des articles'
+  weight: 2

@@ -1,7 +1,0 @@
-hello.toto:
-  path: '/toto'
-  defaults:
-    _title: 'toto'
-    _controller: '\Drupal\hello\Controller\HelloController::content'
-  requirements:
-    _access: 'TRUE'

@@ -13,7 +13,7 @@ class HelloController extends ControllerBase {
     $messages[] = $this->t(
       'You are on the %route_name page!',
       [
-        '%route_name' => 'Hello',
+        '%route_name' => 'Liste pages',
       ]
     );
     
