@@ -22,7 +22,6 @@ public function content(NodeInterface $node = NULL) {
                $this->entityTypeManager()->getStorage('user')->load($record->uid)->toLink(),
                \Drupal::service('date.formatter')->format($record->update_time),
            ];
-           //$uids[] = 'user:' . $record->uid;
        }
 
        $table = [
