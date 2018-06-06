@@ -27,7 +27,9 @@ function hello_user_login($account) {
 ));
 }
 
-/** Implement hook node update */
+/** Implement hello_node_update().
+ * @param \Drupal\node\NodeInterface $node
+ */
 function hello_node_update(NodeInterface $node) {
 	$user = \Drupal::currentUser();
 	$database = \Drupal::database();
@@ -38,6 +40,16 @@ function hello_node_update(NodeInterface $node) {
         'uid'=> $user->id(),
         'update_time'=> $node->getChangedTime(),
 	  ])
+	  ->execute();
+}
+
+/** Implement hello_node_delete().
+ * @param \Drupal\node\NodeInterface $node
+ */
+function hello_node_delete(NodeInterface $node) {
+	$database = \Drupal::database();
+	$database->delete('hello_node_history')
+	  ->condition('nid',$node->id())
 	  ->execute();
 }
 
