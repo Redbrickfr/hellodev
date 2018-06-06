@@ -13,3 +13,10 @@ hello.hello2:
     _controller: '\Drupal\hello\Controller\HelloController2::content'
   requirements:
     _access: 'TRUE'
+hello.hello3:
+  path: '/node/{node}/history'
+  defaults:
+    _title: 'Update history'
+    _controller: '\Drupal\hello\Controller\HelloController3::content'
+  requirements:
+    _access: 'TRUE'
