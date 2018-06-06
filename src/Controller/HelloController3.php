@@ -26,11 +26,18 @@ public function content(NodeInterface $node = NULL) {
        }
 
        $table = [
-           '#theme' => 'table',
+           '#theme'  => 'table',
            '#header' => [$this->t('Author'), $this->t('Update time')],
-           '#rows' => $rows,
+           '#rows'   => $rows,
        ];
 
-       return $table;
+      //On renvoi les render arrays.
+       return [
+        'table' => $table,
+        '#cache'=> [
+        'keys'  => ['hello:node_history:' . $node->id()],
+        'tags'  => array_merge(['node' . $node->id()], $uids),
+      ],
+    ];
    }
 }
