@@ -6,13 +6,13 @@ hello.hello:
     param: 'no parameter'
   requirements:
     _access: 'TRUE'
-hello.hello2:
-  path: '/nodelist/{nodetype}'
-  defaults:
-    _title: 'Liste des articles'
-    _controller: '\Drupal\hello\Controller\HelloController2::content'
-  requirements:
-    _access: 'TRUE'
+#hello.hello2:
+  #path: '/nodelist/{nodetype}'
+  #defaults:
+  #  _title: 'Liste des articles'
+  #  _controller: '\Drupal\hello\Controller\HelloController2::content'
+  #requirements:
+   # _access: 'TRUE'
 hello.hello3:
   path: '/node/{node}/history'
   defaults:

@@ -12,7 +12,7 @@ class HelloForm extends FormBase {
 /**
  * {@inheritdoc}.
  */
-public function getFormId() {
+public function getFormID() {
 	return 'hello_form';
 }
 
