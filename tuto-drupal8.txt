@@ -1,0 +1,6 @@
+# RESSOURCES DEV DRUPAL A FAIRE
+
+- https://valuebound.com/resources/blog/step-by-step-method-to-create-a-custom-form-in-drupal-8
+- https://www.velir.com/blog/2016/01/04/technical-guide-drupal-8-forms
+- https://happyculture.coop/blog/drupal-8-formulaires-configuration
+- https://trellon.com/content/blog/how-create-custom-form-in-drupal-8

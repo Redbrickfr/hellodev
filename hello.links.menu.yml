@@ -3,3 +3,10 @@ hello.page:
   route_name: hello.hello
   description: 'hello page'
   menu_name: main
+
+hello.admin_form:
+  title: 'block color'
+  description: 'block color.'
+  route_name: hello.admin_form
+  menu_name: admin
+  parent: system.themes_page
