@@ -20,3 +20,10 @@ hello.hello3:
     _controller: '\Drupal\hello\Controller\HelloController3::content'
   requirements:
     _access: 'TRUE'
+hello.form:
+  path: '/hello-form'
+  defaults:
+    _title: 'Form Calculator'
+    _form: '\Drupal\hello\Form\HelloForm'
+  requirements:
+    _access: 'TRUE'

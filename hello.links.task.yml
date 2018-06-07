@@ -13,3 +13,8 @@ hello.hello3:
   base_route: entity.node.canonical
   title: 'Update history'
   weight: 100
+hello.form:
+  route_name: hello.form
+  base_route: hello.hello
+  title: 'Form Calculator'
+  weight: 100
