@@ -36,7 +36,6 @@ function hello_node_update(NodeInterface $node) {
 	$database->insert('hello_node_history')
 	  ->fields([
         'nid'=> $node->id(),
-        'titlenid'=> $node->label(),
         'uid'=> $user->id(),
         'update_time'=> $node->getChangedTime(),
 	  ])
@@ -52,4 +51,29 @@ function hello_node_delete(NodeInterface $node) {
 	  ->condition('nid',$node->id())
 	  ->execute();
 }
+
+function hello_preprocess_block(array &$variables) {
+	$class = \Drupal::config('hello.config')->get('color');
+	$variables['attributes']['class'][] = $class;
+}
+
+function hello_page_attachments(array &$page) {
+	$page['#attached']['library'][] = 'hello/base';
+}
+
+function hello_theme($existing, $type, $theme, $path) {
+  return array(
+    'hello'    => array(
+    'template' => 'hello',
+    'variables'=> array(
+    	'node' => NULL,
+    	'count' => NULL,
+        ),
+    ),
+  );
+}
+
+
+
+
 

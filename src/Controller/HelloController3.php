@@ -1,7 +1,9 @@
 <?php
 namespace Drupal\Hello\Controller;
+
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\node\NodeInterface;
+
 class HelloController3 extends ControllerBase {
   /**
    * 
@@ -30,12 +32,19 @@ public function content(NodeInterface $node = NULL) {
            '#rows'   => $rows,
        ];
 
+        $output = array(
+        '#theme' => 'hello',
+        '#node'  => $node,
+        '#count' => count ($rows),
+        );
+
       //On renvoi les render arrays.
        return [
         'table' => $table,
+        'output' => $output,
         '#cache'=> [
         'keys'  => ['hello:node_history:' . $node->id()],
-        'tags'  => array_merge(['node' . $node->id()], $uids),
+        'tags'  => array_merge(['node:' . $node->id()], $uids),
       ],
     ];
    }

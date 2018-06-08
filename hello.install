@@ -35,12 +35,6 @@ $schema['hello_node_history'] = [
         'not null' => TRUE,
       ],
 
-      'titlenid' => [
-        'type' => 'int',
-        'description' => "uid field",
-        'unsigned' => TRUE,
-        'not null' => FALSE,
-      ],
     ],
     'primary key' => ['hid'],
     'indexes' => ['nid' => ['nid']],

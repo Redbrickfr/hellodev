@@ -1,0 +1,14 @@
+#main .blue-class {
+	color: blue;
+	font-size: 30px;
+}
+
+#main .red-class {
+	color: red;
+	font-size: 50px;
+}
+
+#main .green-class {
+	color: green;
+	font-size: 70px;
+}

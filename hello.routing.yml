@@ -36,3 +36,11 @@ hello.admin_form:
     _form: '\Drupal\hello\Form\HelloAdminForm'
   requirements:
     _access: 'TRUE'
+
+hello.access:
+  path: '/hello-access'
+  defaults:
+    _title: 'Hello access'
+    _controller: '\Drupal\hello\Controller\HelloController2::content'
+  requirements:
+    _access_hello: 'param'

@@ -35,7 +35,7 @@ class HelloAdminForm extends ConfigFormBase {
           '' => $this->t('No color'),
           'blue-class' => $this->t('blue'),
           'green-class' => $this->t('green'),
-          'red-class' => $this->t('pink'),
+          'red-class' => $this->t('red'),
         ],
           '#default_value'=> $color,
   ];

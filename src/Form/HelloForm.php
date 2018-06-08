@@ -83,14 +83,29 @@ public function submitForm(array &$form, FormStateInterface $form_state) {
 	$second_value = $form_state->getValue('second_value');
 	$operation = $form_state->getValue('operation');
 
-	switch ($operation){
+	switch ($operation) {
 		case 1:
-			// 
+			// Additionne first_value et $second_value
 			$result = $first_value+$second_value;
+			break;
+		case 2:
+			// Soustrait first_value et $second_value
+			$result = $first_value-$second_value;
+			break;
+		case 3:
+			// Multiplie first_value et $second_value
+			$result = $first_value*$second_value;
+			break;
+		case 4:
+			// Divise first_value et $second_value
+			$result = $first_value/$second_value;
 			break;
 	}
 
 	// Affiche le résultat dans un message.
-	drupal_set_message($form_state->getValue('first_value') + $form_state->getValue('second_value'));
+	drupal_set_message($result . ' Bravo !');
 		}
 }
+/**
+ * {@inheritdoc}.
+ */
