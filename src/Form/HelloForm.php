@@ -79,6 +79,18 @@ public function validateForm(array &$form, FormStateInterface $form_state) {
  * {@inheritdoc}.
  */
 public function submitForm(array &$form, FormStateInterface $form_state) {
+	$first_value = $form_state->getValue('first_value');
+	$second_value = $form_state->getValue('second_value');
+	$operation = $form_state->getValue('operation');
+
+	switch ($operation){
+		case 1:
+			// 
+			$result = $first_value+$second_value;
+			break;
+	}
+
+	// Affiche le résultat dans un message.
 	drupal_set_message($form_state->getValue('first_value') + $form_state->getValue('second_value'));
 		}
 }
