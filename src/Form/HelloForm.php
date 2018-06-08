@@ -64,6 +64,15 @@ public function validateForm(array &$form, FormStateInterface $form_state) {
 		if (!is_numeric($second_value)) {
 			$form_state->setErrorByName('second_value', $this->t('Value 2 must be numeric too !'));
 		}
+
+		// Récupère et stocke la valeur de mon champ 'operation'.
+		$operation = $form_state->getValue('operation');
+
+		// Ajoute un message d'erreur lorsque l'opération est une division ( = 4 ) et que le deuxième nombre  ('second_value') est égal à 0.
+		if ($operation == 4 && $second_value == 0){
+			// Ajoute un message d'erreur sur le champ 'second_value'.
+			$form_state->setErrorByName('second_value', $this->t('cannot divide by 0'));
+		}
 }
 
 /**
